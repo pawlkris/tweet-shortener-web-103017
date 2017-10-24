@@ -45,7 +45,7 @@ end
 def shortened_tweet_truncator(tweet)
   x = selective_tweet_shortener(tweet)
   if x > 140
-    x = "#{x[0..136]}..."
+    x = "#{x[0..137]}..."
   end
   return x
 end
