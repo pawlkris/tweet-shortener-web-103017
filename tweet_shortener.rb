@@ -36,21 +36,16 @@ def bulk_tweet_shortener(array)
 end
 
 def selective_tweet_shortener(tweet)
-    if tweet.length > 140
-      tweet = word_substituter(tweet)
-    end
+  if tweet.length > 140
+    tweet = word_substituter(tweet)
   end
   return tweet
 end
 
-def shortened_tweet_truncator(array)
-  array = selective_tweet_shortener(array)
-  array = array.collect do |x|
-    if x > 140
-      x = "#{x[0..136]}..."
-    else
-      x = x
-    end
+def shortened_tweet_truncator(tweet)
+  x = selective_tweet_shortener(tweet)
+  if x > 140
+    x = "#{x[0..136]}..."
   end
-    return array
+  return x
 end
