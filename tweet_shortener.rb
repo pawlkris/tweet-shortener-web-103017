@@ -35,16 +35,12 @@ def bulk_tweet_shortener(array)
   array.each {|x| puts(x)}
 end
 
-def selective_tweet_shortener(array) # rspec is giving me an error that collect is not defined in this method... I tried changing it to a loop and it didn't recognize length as a method...
-  array = array.collect do |x|
-    binding.pry
-    if x.length > 140
-      x = word_substituter(x)
-    else
-      x = x
+def selective_tweet_shortener(tweet) 
+    if tweet.length > 140
+      tweet = word_substituter(tweet)
     end
   end
-  return array
+  return tweet
 end
 
 def shortened_tweet_truncator(array)
