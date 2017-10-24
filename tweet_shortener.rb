@@ -1,4 +1,3 @@
-require 'pry'
 
 def dictionary
   dictionary = {
@@ -38,6 +37,7 @@ end
 
 def selective_tweet_shortener(array) # rspec is giving me an error that collect is not defined in this method... I tried changing it to a loop and it didn't recognize length as a method...
   array = array.collect do |x|
+    binding.pry
     if x.length > 140
       x = word_substituter(x)
     else
